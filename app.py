@@ -3,6 +3,10 @@ import requests
 
 app = Flask(__name__)
 
+@app.route("/")
+def home():
+    return {"message": "TDS Virtual TA API is running. Use the /api/ endpoint with POST method."}
+
 @app.route("/api/", methods=["POST"])
 def answer_question():
     try:
